@@ -22,7 +22,7 @@ endif
 
 .PHONY: clean sse-tests ref-tests benchmark all
 
-all: ref ref-test
+all: ref-tests sse-tests sse-bench
 
 $(SSE)/%.o: $(SSE)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
