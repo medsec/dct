@@ -22,13 +22,15 @@ the encryption scheme.
 Christian Forler, Eik List, Stefan Lucks, and Jakob Wenzel: Efficient Beyond-
 Birthday-Bound-Secure Deterministic Authenticated Encryption with Minimal
 Stretch. IACR Cryptology ePrint Archive, 2016:407, 2016.
+https://eprint.iacr.org/2016/407
 
 ## Instance:
 Our instantiation uses
-- The efficient Bernstein-Rabin-Winograd (BRW) BRW-256 as 2n-bit hash function.
-- Simpira for 2n-bit blocks as 2n-bit cipher.
-- The Counter-in-Tweak (CTRT) encryption scheme, instantiated with the Deoxys-
-  BC-128-128 tweakable block cipher.
+- The efficient Bernstein-Rabin-Winograd (BRW) BRW-256 as 2n-bit hash function
+  [Ber07].
+- Simpira [GM16] for 2n-bit blocks as 2n-bit cipher.
+- The Counter-in-Tweak (CTRT) encryption scheme [PS15], instantiated with the
+  Deoxys-BC-128-128 [JNP14] tweakable block cipher.
 
 ## Content:
 - C reference implementation
@@ -50,12 +52,15 @@ Our instantiation uses
 [Ber07] Daniel J. Bernstein. Polynomial evaluation and message authentication.
         http://cr.yp.to/papers, permanent ID: b1ef3f2d385a926123e1517392e20f8c, 
         2, 2007.
+
 [GM16]  Shay Gueron and Nicky Mouha. Simpira v2: A Family of Efficient 
         Permutations Using the AES Round Function. IACR Cryptology ePrint 
         Archive, 2016:122, 2016.
-[JNP14] Jeremy Jean, Ivica Nikolic, and Thomas Peyrin. Deoxys v1.3, 2015. 
-        Second-round submission to the CAESAR competition, 
-        http://competitions.cr.yp.to/caesar-submissions.html. 
+
+[JNP14] Jeremy Jean, Ivica Nikolic, and Thomas Peyrin. Tweaks and Keys for Block
+        Ciphers: The TWEAKEY Framework. In ASIACRYPT (2), volume 8874 of LNCS,
+        pages 274–288, 2014.
+
 [PS15]  Thomas Peyrin and Yannick Seurin. Counter-in-Tweak: Authenticated 
         Encryption Modes for Tweakable Block Ciphers. IACR Cryptology ePrint 
         Archive, 2015:1049, 2015.
