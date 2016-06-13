@@ -403,10 +403,10 @@ static inline void deoxys_enc_n(__m128i* states,
 } while (0)
 
 // ---------------------------------------------------------------------
-// Simpira
+// Simpira v2
 // ---------------------------------------------------------------------
 
-#define simpira_const(c,b)  _mm_setr_epi32(c,b,0,0)
+#define simpira_const(c,b)  _mm_setr_epi32(c^b, c^b^0x10, c^b^0x20, c^b^0x30)
 
 static void simpira_decrypt(__m128i k, const __m128i* c, __m128i* m) 
 {

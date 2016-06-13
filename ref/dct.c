@@ -261,8 +261,10 @@ static void deoxys_encrypt(const DEOXYS_KEY key,
 
 static void simpira_set_const(block round_const, const size_t c, const size_t b)
 {
-    round_const[0] = c;
-    round_const[4] = b;
+    round_const[ 0] = 0x00^c^b;
+    round_const[ 4] = 0x10^c^b;
+    round_const[ 8] = 0x20^c^b;
+    round_const[12] = 0x30^c^b; 
 }
 
 // ---------------------------------------------------------------------
